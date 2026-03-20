@@ -26,7 +26,7 @@ func (l *Lane) Run(ctx context.Context) {
 		l.scoreboardCh <- fmt.Sprintf("Дорожка %d освободилась", l.ID)
 		l.freeCh <- l.ID
 	case <-ctx.Done():
-		l.scoreboardCh <- fmt.Sprintf("Дорожка %d завершила работу")
+		l.scoreboardCh <- fmt.Sprintf("Дорожка %d завершила работу", l.ID)
 		return
 	}
 
